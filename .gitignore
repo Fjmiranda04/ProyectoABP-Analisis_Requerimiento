@@ -1,0 +1,3 @@
+#Ignorar archivos no necesarios
+build.xml
+manifest.mf
