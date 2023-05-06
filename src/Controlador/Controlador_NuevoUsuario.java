@@ -33,8 +33,12 @@ public class Controlador_NuevoUsuario implements ActionListener {
 
         if (evt.equals(view.btnCrearCuenta)) {
 
-            if (!"".equals(view.txtCrearCuenta_Nombre.getText()) || !"".equals(view.txtCrearCuenta_Apellido.getText()) || !"".equals(view.txtCrearCuenta_Dni.getText())
-                    || !"".equals(view.txtCrearCuenta_Edad.getText()) || !"".equals(view.txtCrearCuenta_Telefono.getText()) || !"".equals(view.txtCrearCuenta_Usuario.getText())
+            if (!"".equals(view.txtCrearCuenta_Nombre.getText())
+                    || !"".equals(view.txtCrearCuenta_Apellido.getText())
+                    || !"".equals(view.txtCrearCuenta_Dni.getText())
+                    || !"".equals(view.txtCrearCuenta_Edad.getText())
+                    || !"".equals(view.txtCrearCuenta_Telefono.getText())
+                    || !"".equals(view.txtCrearCuenta_Usuario.getText())
                     || !"".equals(view.txtCrearCuenta_Password.getText())) {
 
                 registro.setNombre(view.txtCrearCuenta_Nombre.getText());
