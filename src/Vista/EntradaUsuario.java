@@ -15,6 +15,11 @@ public class EntradaUsuario extends javax.swing.JFrame {
      */
     public EntradaUsuario() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
+
+        this.setResizable(false);
+
     }
 
     /**
