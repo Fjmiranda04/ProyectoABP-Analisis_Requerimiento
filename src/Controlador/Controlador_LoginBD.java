@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.LoginBD;
 import Modelo.ModeloLogin;
+import Vista.Alquiler;
 import Vista.EntradaAdministrador;
 import Vista.LoginUI;
 import Vista.RegistroUsuario_UI;
@@ -44,8 +45,8 @@ public class Controlador_LoginBD implements ActionListener {
                 lg = login.log(usuario, password);
 
                 if (lg.getUsuario() != null && lg.getPassword() != null) {
-                    EntradaAdministrador sistemas = new EntradaAdministrador();
-                    sistemas.setVisible(true);
+                    Alquiler reservacion = new Alquiler();
+                    reservacion.setVisible(true);
                     view.dispose();
 
                 } else {
