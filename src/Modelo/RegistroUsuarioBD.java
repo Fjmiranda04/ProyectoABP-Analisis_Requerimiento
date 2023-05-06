@@ -8,14 +8,14 @@ import javax.swing.JOptionPane;
 
 public class RegistroUsuarioBD {
 
-    Conexion conexion = new Conexion();
+    ConexionMySQL conexion = new ConexionMySQL();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
 
     public boolean registrarUsuario(ModeloRegistro nuevoUsuario) {
 
-        String sql = "INSERT INTO loginusuario (usuario, password, nombre, apellido, dni, edad, telefono ) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO loginusuario (Nombre_Usuario, Password_Usuario, nombre, apellido, dni, edad, telefono ) VALUES (?,?,?,?,?,?,?)";
 
         try {
 
