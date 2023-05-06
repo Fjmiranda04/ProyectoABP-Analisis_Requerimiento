@@ -30,7 +30,7 @@ public class LoginBD {
     ResultSet rs;
 
     //Instanciamos la conexion
-    Conexion cn = new Conexion();
+    ConexionMySQL cn = new ConexionMySQL();
 
     /*Creamos un metodo con la clase ModeloLogin llamada (log) con los parametros de
      nombre(nombre de usuario) y password(contrasena).*/
@@ -40,7 +40,7 @@ public class LoginBD {
 
         /*Creamos una variable llamada (sql) que sera la encargada de
          proporcionar la informacion almacenada en la BD*/
-        String sql = "SELECT * FROM loginusuario WHERE usuario = ? AND password = ?";
+        String sql = "SELECT * FROM loginusuario WHERE Nombre_Usuario = ? AND Password_Usuario = ?";
 
         /*Este bloque nos ayudara adetectar y controlar lo que haremos a
          continuacion
@@ -52,7 +52,7 @@ public class LoginBD {
              respetivas posiciones*/
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setString(1,usuario );
+            ps.setString(1, usuario);
             ps.setString(2, password);
 
             /*NOTA:
@@ -65,9 +65,9 @@ public class LoginBD {
                 /*En esta segunda ya nos enfocamos en nuestra clase login 
                  con sus objetos los cuales recibiran los valores que tendremos 
                  almacenados en nuestra BD*/
-                
-                l.setUsuario(rs.getString("usuario"));
-                l.setPassword(rs.getString("password"));
+
+                l.setUsuario(rs.getString("Nombre_Usuario"));
+                l.setPassword(rs.getString("Password_Usuario"));
 
             }
 
