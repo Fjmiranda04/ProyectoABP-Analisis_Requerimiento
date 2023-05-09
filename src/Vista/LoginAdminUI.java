@@ -4,29 +4,25 @@
  */
 package Vista;
 
-import Controlador.Controlador_LoginBD;
-import Modelo.LoginBD;
-import javax.swing.JOptionPane;
+import Controlador.Controlador_LoginAdminBD;
 
-/**
- *
- * @author Portatil
- */
-public class LoginUI extends javax.swing.JFrame {
 
-    Controlador_LoginBD controlador;
+
+public class LoginAdminUI extends javax.swing.JFrame {
+
+    Controlador_LoginAdminBD controlador;
 
     /**
      * Creates new form NumberAdditionUI
      */
-    public LoginUI() {
+    public LoginAdminUI() {
         initComponents();
 
         this.setLocationRelativeTo(null);
 
         this.setResizable(false);
 
-        controlador = new Controlador_LoginBD(this);
+        controlador = new Controlador_LoginAdminBD(this);
     }
 
     /**
@@ -42,11 +38,10 @@ public class LoginUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtusuario = new javax.swing.JTextField();
+        txtusuarioAdmin = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnacceder = new javax.swing.JButton();
-        btncrearUsuario = new javax.swing.JButton();
-        txtpassword = new javax.swing.JPasswordField();
+        btnaccederAdmin = new javax.swing.JButton();
+        txtpasswordAdmin = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,30 +77,20 @@ public class LoginUI extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre de Usuario: ");
 
-        txtusuario.setBackground(new java.awt.Color(255, 255, 255));
-        txtusuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txtusuarioAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        txtusuarioAdmin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Contraseña:");
 
-        btnacceder.setBackground(new java.awt.Color(0, 117, 211));
-        btnacceder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnacceder.setForeground(new java.awt.Color(0, 0, 0));
-        btnacceder.setText("Acceder");
+        btnaccederAdmin.setBackground(new java.awt.Color(0, 117, 211));
+        btnaccederAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnaccederAdmin.setForeground(new java.awt.Color(0, 0, 0));
+        btnaccederAdmin.setText("Acceder");
 
-        btncrearUsuario.setBackground(new java.awt.Color(255, 39, 37));
-        btncrearUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btncrearUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        btncrearUsuario.setText("Crear cuenta");
-        btncrearUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncrearUsuarioActionPerformed(evt);
-            }
-        });
-
-        txtpassword.setBackground(new java.awt.Color(255, 255, 255));
-        txtpassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txtpasswordAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        txtpasswordAdmin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,19 +98,17 @@ public class LoginUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnacceder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btncrearUsuario)
-                .addGap(20, 20, 20))
+                .addComponent(btnaccederAdmin)
+                .addGap(147, 147, 147))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 103, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtpasswordAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
-                                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtusuarioAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(109, 109, 109))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,15 +124,13 @@ public class LoginUI extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtusuarioAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtpasswordAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncrearUsuario)
-                    .addComponent(btnacceder))
+                .addComponent(btnaccederAdmin)
                 .addGap(24, 24, 24))
         );
 
@@ -173,10 +154,6 @@ public class LoginUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btncrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btncrearUsuarioActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -194,34 +171,35 @@ public class LoginUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdminUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdminUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdminUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdminUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginUI().setVisible(true);
+                new LoginAdminUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnacceder;
-    public javax.swing.JButton btncrearUsuario;
+    public javax.swing.JButton btnaccederAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JPasswordField txtpassword;
-    public javax.swing.JTextField txtusuario;
+    public javax.swing.JPasswordField txtpasswordAdmin;
+    public javax.swing.JTextField txtusuarioAdmin;
     // End of variables declaration//GEN-END:variables
 }
