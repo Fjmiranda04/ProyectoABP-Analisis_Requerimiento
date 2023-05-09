@@ -5,22 +5,28 @@
 package Vista;
 
 import Controlador.Controlador_NuevoUsuario;
+import Modelo.TipoDocBD;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
  * @author Portatil
  */
 public class RegistroUsuario_UI extends javax.swing.JFrame {
-
+    
     Controlador_NuevoUsuario controladorUsuario;
+
     public RegistroUsuario_UI() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
         this.setResizable(false);
         
         controladorUsuario = new Controlador_NuevoUsuario(this);
+        controladorUsuario.LlenarCombobox();
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +48,7 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
         txtCrearCuenta_Edad = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtCrearCuenta_Telefono = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        Cbox_TipoDoc = new javax.swing.JComboBox<String>();
         txtCrearCuenta_Dni = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -117,9 +123,8 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
         txtCrearCuenta_Telefono.setBackground(new java.awt.Color(255, 255, 255));
         txtCrearCuenta_Telefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "...", "C.C.", "T.I." }));
-        jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        Cbox_TipoDoc.setBackground(new java.awt.Color(255, 255, 255));
+        Cbox_TipoDoc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         txtCrearCuenta_Dni.setBackground(new java.awt.Color(255, 255, 255));
         txtCrearCuenta_Dni.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -195,7 +200,7 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
                                         .addComponent(txtCrearCuenta_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                         .addComponent(txtCrearCuenta_Edad))
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Cbox_TipoDoc, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(48, 48, 48)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +254,7 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cbox_TipoDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCrearCuenta_Dni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2)
@@ -336,9 +341,9 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> Cbox_TipoDoc;
     public javax.swing.JButton btnCrearCuenta;
     public javax.swing.JCheckBox jCheckBox1;
-    public javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
