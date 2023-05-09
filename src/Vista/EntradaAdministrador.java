@@ -15,6 +15,10 @@ public class EntradaAdministrador extends javax.swing.JFrame {
      */
     public EntradaAdministrador() {
         initComponents();
+
+        this.setLocationRelativeTo(null);
+
+        this.setResizable(false);
     }
 
     /**
