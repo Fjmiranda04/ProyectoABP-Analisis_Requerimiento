@@ -15,7 +15,7 @@ public class ReservaBD {
 
     public boolean realizarReserva(ModeloReserva nuevaReserva) {
 
-        String sql = "INSERT INTO reserva (Nombre_usuario, Dni_Usuario, Numero_Placa, Color_Vehiculo, Marca_Vehiculo, Tiempo_Reserva) VALUE (?,?,?,?,?,?)";
+        String sql = "INSERT INTO reservacion (Nombre_usuario, Dni_Usuario, Numero_Puesto_Reservacion,Tipo_Vehiculo, Numero_Placa, Color_Vehiculo, Marca_Vehiculo, Tiempo_Reserva) VALUE (?,?,?,?,?,?,?,?)";
 
         try {
             con = conexion.getConnection();
@@ -23,10 +23,12 @@ public class ReservaBD {
 
             ps.setString(1, nuevaReserva.getNombreUsuario());
             ps.setInt(2, nuevaReserva.getDniUsuario());
-            ps.setString(3, nuevaReserva.getNumeroPlaca());
-            ps.setString(4, nuevaReserva.getColorVehiculo());
-            ps.setString(5, nuevaReserva.getMarcaVehiculo());
-            ps.setString(6, nuevaReserva.getTiempoReserva());
+            ps.setInt(3, nuevaReserva.getPuestoReservacion());
+            ps.setInt(4, nuevaReserva.getTipoVehiculo());
+            ps.setString(5, nuevaReserva.getNumeroPlaca());
+            ps.setString(6, nuevaReserva.getColorVehiculo());
+            ps.setString(7, nuevaReserva.getMarcaVehiculo());
+            ps.setString(8, nuevaReserva.getTiempoReserva());
 
             ps.execute();
 
