@@ -5,16 +5,16 @@
  y la contrasena. */
 package Modelo;
 
-public class ModeloLogin {
+public class ModeloLoginUsuario {
 
     private int id;
     private String usuario;
     private String password;
 
-    public ModeloLogin() {
+    public ModeloLoginUsuario() {
     }
 
-    public ModeloLogin(int id, String usuario, String password) {
+    public ModeloLoginUsuario(int id, String usuario, String password) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
