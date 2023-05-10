@@ -1,7 +1,7 @@
 package Controlador;
 
-import Modelo.LoginBD;
-import Modelo.ModeloLogin;
+import Modelo.LoginUsuarioBD;
+import Modelo.ModeloLoginUsuario;
 import Vista.Alquiler;
 import Vista.EntradaAdministrador;
 import Vista.LoginUI;
@@ -11,20 +11,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class Controlador_LoginBD implements ActionListener {
+public class Controlador_LoginUsuarioBD implements ActionListener {
 
-    Modelo.ModeloLogin lg = new Modelo.ModeloLogin();
-    LoginBD login = new LoginBD();
+    ModeloLoginUsuario lg = new ModeloLoginUsuario();
+    LoginUsuarioBD login = new LoginUsuarioBD();
 
     private LoginUI view;
-    private LoginBD modelo = new LoginBD();
+    private LoginUsuarioBD modelo = new LoginUsuarioBD();
 
     public void Eventos() {
         view.btnacceder.addActionListener(this);
         view.btncrearUsuario.addActionListener(this);
     }
 
-    public Controlador_LoginBD(LoginUI view) {
+    public Controlador_LoginUsuarioBD(LoginUI view) {
         this.view = view;
         Eventos();
 
