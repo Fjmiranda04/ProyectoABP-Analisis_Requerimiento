@@ -22,7 +22,7 @@ public class Alquiler extends javax.swing.JFrame {
         this.setResizable(false);
 
         controladorReservacion = new Controlador_Reservacion(this);
-        controladorReservacion.LlenarCombobox();
+        controladorReservacion.llenarComboBox();
     }
 
     /**
