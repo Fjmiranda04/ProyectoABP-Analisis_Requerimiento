@@ -23,7 +23,7 @@ public class RegistroUsuario_UI extends javax.swing.JFrame {
         this.setResizable(false);
         
         controladorUsuario = new Controlador_NuevoUsuario(this);
-        controladorUsuario.LlenarCombobox();
+        controladorUsuario.llenarComboBox();
     }
     
 
