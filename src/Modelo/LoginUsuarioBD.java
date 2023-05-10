@@ -21,7 +21,7 @@ import java.sql.SQLException;
  errores y avisos que se producen mientras se está accediendo a un 
  origen de datos*/
 
-public class LoginBD {
+public class LoginUsuarioBD {
 
     //Creamos las respectivas variables(con,ps,rs)
     Connection con;
@@ -34,9 +34,9 @@ public class LoginBD {
 
     /*Creamos un metodo con la clase ModeloLogin llamada (log) con los parametros de
      nombre(nombre de usuario) y password(contrasena).*/
-    public ModeloLogin log(String usuario, String password) {
+    public ModeloLoginUsuario log(String usuario, String password) {
         //Intanciamos la clase ModeloLogin
-        ModeloLogin l = new ModeloLogin();
+        ModeloLoginUsuario l = new ModeloLoginUsuario();
 
         /*Creamos una variable llamada (sql) que sera la encargada de
          proporcionar la informacion almacenada en la BD*/
