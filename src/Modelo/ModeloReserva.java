@@ -5,6 +5,8 @@ public class ModeloReserva {
     private int id_reserva;
     private String nombreUsuario;
     private int dniUsuario;
+    private int puestoReservacion;
+    private int tipoVehiculo;
     private String numeroPlaca;
     private String colorVehiculo;
     private String marcaVehiculo;
@@ -13,10 +15,12 @@ public class ModeloReserva {
     public ModeloReserva() {
     }
 
-    public ModeloReserva(int id_reserva, String nombreUsuario, int dniUsuario, String numeroPlaca, String colorVehiculo, String marcaVehiculo, String tiempoReserva) {
+    public ModeloReserva(int id_reserva, String nombreUsuario, int dniUsuario, int puestoReservacion, int tipoVehiculo, String numeroPlaca, String colorVehiculo, String marcaVehiculo, String tiempoReserva) {
         this.id_reserva = id_reserva;
         this.nombreUsuario = nombreUsuario;
         this.dniUsuario = dniUsuario;
+        this.puestoReservacion = puestoReservacion;
+        this.tipoVehiculo = tipoVehiculo;
         this.numeroPlaca = numeroPlaca;
         this.colorVehiculo = colorVehiculo;
         this.marcaVehiculo = marcaVehiculo;
@@ -45,6 +49,22 @@ public class ModeloReserva {
 
     public void setDniUsuario(int dniUsuario) {
         this.dniUsuario = dniUsuario;
+    }
+
+    public int getPuestoReservacion() {
+        return puestoReservacion;
+    }
+
+    public void setPuestoReservacion(int puestoReservacion) {
+        this.puestoReservacion = puestoReservacion;
+    }
+
+    public int getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(int tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     public String getNumeroPlaca() {
