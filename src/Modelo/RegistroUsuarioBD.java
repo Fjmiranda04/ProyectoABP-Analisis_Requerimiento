@@ -15,7 +15,7 @@ public class RegistroUsuarioBD {
 
     public boolean registrarUsuario(ModeloRegistro nuevoUsuario) {
 
-        String sql = "INSERT INTO loginusuario (Nombre_Usuario, Password_Usuario, nombre, apellido, dni, edad, telefono ) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO loginusuario (Numero_Doc,TipoDoc,Nombre_Usuario, Password_Usuario, Nombre, Apellido, Edad, Telefono ) VALUES (?,?,?,?,?,?,?,?)";
 
         try {
 
@@ -25,13 +25,14 @@ public class RegistroUsuarioBD {
             con = conexion.getConnection();
             ps = con.prepareStatement(sql);
 
-            ps.setString(1, nuevoUsuario.getUsuario());
-            ps.setString(2, nuevoUsuario.getPassword());
-            ps.setString(3, nuevoUsuario.getNombre());
-            ps.setString(4, nuevoUsuario.getApellido());
-            ps.setInt(5, nuevoUsuario.getDni());
-            ps.setInt(6, nuevoUsuario.getEdad());
-            ps.setString(7, nuevoUsuario.getTelefono());
+            ps.setInt(1, nuevoUsuario.getDni());
+            ps.setInt(2, nuevoUsuario.getTipoDoc());
+            ps.setString(3, nuevoUsuario.getUsuario());
+            ps.setString(4, nuevoUsuario.getPassword());
+            ps.setString(5, nuevoUsuario.getNombre());
+            ps.setString(6, nuevoUsuario.getApellido());
+            ps.setInt(7, nuevoUsuario.getEdad());
+            ps.setString(8, nuevoUsuario.getTelefono());
 
 
             /*NOTA: 
