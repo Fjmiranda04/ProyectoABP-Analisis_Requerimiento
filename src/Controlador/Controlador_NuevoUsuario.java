@@ -1,11 +1,14 @@
 package Controlador;
 
 import Modelo.ModeloRegistro;
+import Modelo.ModeloTipoDocumento;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.RegistroUsuarioBD;
+import Modelo.TipoDocBD;
 import Vista.LoginUI;
 import Vista.RegistroUsuario_UI;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class Controlador_NuevoUsuario implements ActionListener {
@@ -41,9 +44,12 @@ public class Controlador_NuevoUsuario implements ActionListener {
                     || !"".equals(view.txtCrearCuenta_Usuario.getText())
                     || !"".equals(view.txtCrearCuenta_Password.getText())) {
 
+                ModeloTipoDocumento td = (ModeloTipoDocumento) view.Cbox_TipoDoc.getSelectedItem();
+
+                registro.setDni(Integer.parseInt(view.txtCrearCuenta_Dni.getText()));
+                registro.setTipoDoc(td.getCodigo());
                 registro.setNombre(view.txtCrearCuenta_Nombre.getText());
                 registro.setApellido(view.txtCrearCuenta_Apellido.getText());
-                registro.setDni(Integer.parseInt(view.txtCrearCuenta_Dni.getText()));
                 registro.setEdad(Integer.parseInt(view.txtCrearCuenta_Edad.getText()));
                 registro.setTelefono(view.txtCrearCuenta_Telefono.getText());
                 registro.setUsuario(view.txtCrearCuenta_Usuario.getText());
@@ -64,4 +70,9 @@ public class Controlador_NuevoUsuario implements ActionListener {
 
     }
 
+    public void llenarComboBox() {
+        TipoDocBD td = new TipoDocBD();
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel(td.getTipoDocumento().toArray());
+        view.Cbox_TipoDoc.setModel(modelo);
+    }
 }
